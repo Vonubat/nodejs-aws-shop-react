@@ -37,7 +37,7 @@ export default function Header() {
             underline="none"
             to="/"
           >
-            Car Store
+            Car Store!
           </Link>
         </Typography>
 

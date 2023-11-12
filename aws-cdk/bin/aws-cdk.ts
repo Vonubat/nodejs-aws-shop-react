@@ -8,10 +8,13 @@ import * as origins from "aws-cdk-lib/aws-cloudfront-origins";
 
 import { AwsCdkStack } from "../lib/aws-cdk-stack";
 
+const region = "eu-west-1";
+const bucketName = "nodejs-aws-shop-react-vonubat";
+
 const app = new cdk.App();
 
-const stack = new AwsCdkStack(app, "VonubatNodejsAwsShopReact", {
-  env: { region: "eu-west-1" },
+const stack = new AwsCdkStack(app, "NodejsAwsShopReactVonubat", {
+  env: { region },
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */
@@ -25,7 +28,8 @@ const stack = new AwsCdkStack(app, "VonubatNodejsAwsShopReact", {
 });
 
 const bucket = new s3.Bucket(stack, "WebAppBucket", {
-  bucketName: "vonubat-nodejs-aws-shop-react",
+  bucketName,
+  publicReadAccess: false,
 });
 
 const originAccessIdentity = new cf.OriginAccessIdentity(
@@ -47,7 +51,7 @@ const cloudfront = new cf.Distribution(stack, "WebAppDistribution", {
   defaultRootObject: "index.html",
   errorResponses: [
     {
-      httpStatus: 404,
+      httpStatus: 403,
       responseHttpStatus: 200,
       responsePagePath: "/index.html",
     },
