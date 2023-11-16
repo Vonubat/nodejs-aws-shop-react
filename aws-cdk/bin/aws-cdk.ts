@@ -7,9 +7,7 @@ import * as cf from "aws-cdk-lib/aws-cloudfront";
 import * as origins from "aws-cdk-lib/aws-cloudfront-origins";
 
 import { AwsCdkStack } from "../lib/aws-cdk-stack";
-
-const region = "eu-west-1";
-const bucketName = "nodejs-aws-shop-react-vonubat";
+import { bucketName, region } from "../src/constants";
 
 const app = new cdk.App();
 

@@ -13,7 +13,7 @@
     "prettier": "prettier src --write",
     "postinstall": "cd aws-cdk && npm install",
     "cdk:bootstrap": "cd aws-cdk && npm run cdk bootstrap",
-    "cdk:deploy": "cd aws-cdk && npm run cdk deploy",
+    "cdk:deploy": "cd aws-cdk && npm run cdk deploy --require-approval=never",
     "cdk:destroy": "cd aws-cdk && npm run cdk destroy"
   },
   "dependencies": {
