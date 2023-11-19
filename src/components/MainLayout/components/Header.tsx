@@ -9,6 +9,7 @@ import Menu from "@mui/material/Menu";
 import Cart from "~/components/MainLayout/components/Cart";
 import { Link as RouterLink } from "react-router-dom";
 import Link from "@mui/material/Link";
+import DirectionsCarFilledIcon from "@mui/icons-material/DirectionsCarFilled";
 
 export default function Header() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -26,6 +27,9 @@ export default function Header() {
   return (
     <AppBar position="relative">
       <Toolbar>
+        <DirectionsCarFilledIcon
+          sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+        />
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           <Link
             component={RouterLink}
@@ -33,7 +37,7 @@ export default function Header() {
             underline="none"
             to="/"
           >
-            My Store!
+            Car Store!
           </Link>
         </Typography>
 

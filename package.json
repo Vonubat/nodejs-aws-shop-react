@@ -10,7 +10,11 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "lint": "eslint --ignore-path .gitignore --fix src",
-    "prettier": "prettier src --write"
+    "prettier": "prettier src --write",
+    "postinstall": "cd aws-cdk && npm install",
+    "cdk:bootstrap": "cd aws-cdk && npm run cdk bootstrap",
+    "cdk:deploy": "cd aws-cdk && npm run cdk deploy",
+    "cdk:destroy": "cd aws-cdk && npm run cdk destroy"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
